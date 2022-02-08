@@ -6,7 +6,7 @@ positions:
   filename: /tmp/positions.yaml
 
 clients:
-  - url: https://{{ loki_user }}:{{ loki_password }}@{{ loki_url }}/loki/api/v1/push
+  - url: "https://{{ loki_user }}:{{ loki_password }}@{{ loki_url }}/loki/api/v1/push"
 
 scrape_configs:
     - job_name: varlog

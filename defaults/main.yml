@@ -1,0 +1,6 @@
+---
+# defaults file for ansible-role-promtail
+
+loki_user: 
+loki_password: 
+loki_url: 

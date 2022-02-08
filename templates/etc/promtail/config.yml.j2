@@ -1,0 +1,73 @@
+server:
+  http_listen_port: {{ promtail_http_port }}
+  grpc_listen_port: {{ promtail_grpc_port }}
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: https://{{ loki_user }}:{{ loki_password }}@{{ loki_url }}/loki/api/v1/push
+
+scrape_configs:
+    - job_name: varlog
+      pipeline_stages:
+      - replace:
+          expression: '(?:[0-9]{1,3}\.){3}([0-9]{1,3})'
+          replace: '***'
+      - drop:
+          expression: "(.*basic_status.*|.*digitalocean.*|.*Zabbix.*|.*uptimerobot.*)"
+      static_configs:
+      - targets:
+         - localhost
+        labels:
+         job: varlog
+         host: {{ inventory_hostname }}
+         __path__: /var/log/**/**.log
+
+    - job_name: journal
+      journal:
+        json: false
+        max_age: 12h
+        path: /run/log/journal
+        labels:
+         job: systemd-journal
+         host: {{ inventory_hostname }}
+      relabel_configs:
+        - source_labels:
+          - __journal__systemd_unit
+          target_label: systemd_unit
+        - source_labels:
+          - __journal__hostname
+          target_label: nodename
+        - source_labels:
+          - __journal_syslog_identifier
+          target_label: syslog_identifier
+
+    - job_name: nginx_access
+      pipeline_stages:
+      - replace:
+          expression: '(?:[0-9]{1,3}\.){3}([0-9]{1,3})'
+          replace: '***'
+      - drop:
+          expression: "(.*basic_status.*|.*digitalocean.*|.*Zabbix.*)"
+      static_configs:
+      - targets:
+         - localhost
+        labels:
+         job: nginx_access_log
+         host: {{ inventory_hostname }}
+         __path__: /var/log/nginx/json_access.log
+
+    - job_name: nginx_errors
+      pipeline_stages:
+      - replace:
+          expression: '(?:[0-9]{1,3}\.){3}([0-9]{1,3})'
+          replace: '***'
+      static_configs:
+      - targets:
+         - localhost
+        labels:
+         job: nginx_errors_log
+         host: {{ inventory_hostname }}
+         __path__: /var/log/nginx/*errors.log
+

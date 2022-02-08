@@ -1,0 +1,8 @@
+---
+tls_server_config:
+  client_auth_type: "RequireAndVerifyClientCert"
+#   cert_file: {{ node_export_crt }}
+#   key_file: {{ node_export_key }}
+
+basic_auth_users:
+  {{ basic_auth_user }}

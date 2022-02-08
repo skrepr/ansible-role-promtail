@@ -17,9 +17,9 @@
 
 # About
 
-This Ansible role is used for changing the hostname on your server. 
+This Ansible role is used for getting logs from your host to Loki with Promtail.
 
-It works by taking your `{{ inventory_hostname }}` and using it for changing the hostname.
+It also has the ability to add custom Nginx config to extract detailed logs from Nginx with Promtail.
 
 [![Ansible Role](https://img.shields.io/ansible/role/56457)](https://galaxy.ansible.com/skrepr/hostname)
 [![Ansible Role](https://img.shields.io/ansible/role/d/56457)](https://galaxy.ansible.com/skrepr/hostname)
@@ -28,14 +28,20 @@ It works by taking your `{{ inventory_hostname }}` and using it for changing the
 ## Requirements
 
 - SSH access to the server
-
+- Docker installed
 ## Role Variables
 
-None.
+```
+
+loki_user: this is your basic_auth user
+loki_password: this is where the bearer token should be placed
+loki_url: this the url where loki is used. /api/prom/push is already added in the template!
+
+```
 
 ## Dependencies
 
-None.
+You will need to have Docker installed on the host. You can do that for example with [this](https://github.com/geerlingguy/ansible-role-docker) awesome role from Geerlingguy!
 
 ## Example Playbook
 
@@ -47,7 +53,8 @@ None.
   become: true
 
   roles:
-   - skrepr.hostname
+   - geerlingguy.docker
+   - skrepr.promtail
 ```
 
 ## License
@@ -56,4 +63,4 @@ MIT / BSD
 
 ## Author Information
 
-This role was created in 2021 by [Jeroen van der Meulen](https://github.com/jeroenvandermeulen), commisioned by [Skrepr](https://skrepr.com)
+This role was created in 2022 by [Jeroen van der Meulen](https://github.com/jeroenvandermeulen), commisioned by [Skrepr](https://skrepr.com)

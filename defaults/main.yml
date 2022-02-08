@@ -1,6 +1,9 @@
 ---
-# defaults file for ansible-role-promtail
+# defaults file for ansible-role-monitoring
 
 loki_user: 
 loki_password: 
 loki_url: 
+
+promtail_http_port: 0
+promtail_grpc_port: 0

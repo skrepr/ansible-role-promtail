@@ -37,6 +37,9 @@ loki_user: this is your basic_auth user
 loki_password: this is where the bearer token should be placed
 loki_url: this the url where loki is used. /api/prom/push is already added in the template!
 
+promtail_http_port: 0
+promtail_grpc_port: 0
+
 ```
 
 ## Dependencies

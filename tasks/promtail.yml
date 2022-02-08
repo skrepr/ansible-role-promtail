@@ -21,7 +21,7 @@
   docker_container:
     name: promtail
     image: grafana/promtail:latest
-    state: present
+    state: started
     recreate: yes
     restart_policy: always
     command: -config.file=/etc/promtail/config.yml

@@ -5,14 +5,14 @@
 </a>
 <h1 align="center">Ansible Role Promtail</h1>
 <div align="center">
-  <a href="https://github.com/skrepr/ansible-role-hostname/releases"><img src="https://img.shields.io/github/release/skrepr/ansible-role-hostname.svg" alt="Releases"/></a><a> </a>
-  <a href="https://github.com/skrepr/ansible-role-hostname/blob/main/LICENSE"><img src="https://img.shields.io/github/license/skrepr/ansible-role-hostname" alt="LICENSE"/></a><a> </a>
-  <a href="https://github.com/skrepr/ansible-role-hostname/actions/workflows/ci.yml"><img src="https://github.com/skrepr/ansible-role-hostname/actions/workflows/ci.yml/badge.svg" alt="CI"/></a><a> </a>
-  <a href="https://github.com/skrepr/ansible-role-hostname/issues"><img src="https://img.shields.io/github/issues/skrepr/ansible-role-hostname.svg" alt="Issues"/></a><a> </a>
-  <a href="https://github.com/skrepr/ansible-role-hostname/pulls"><img src="https://img.shields.io/github/issues-pr/skrepr/ansible-role-hostname.svg" alt="PR"/></a><a> </a>
-  <a href="https://github.com/skrepr/ansible-role-hostname/commits"><img src="https://img.shields.io/github/commit-activity/m/skrepr/ansible-role-hostname" alt="Commits"/></a><a> </a>
-  <a href="https://github.com/skrepr/ansible-role-hostname/stars"><img src="https://img.shields.io/github/stars/skrepr/ansible-role-hostname.svg" alt="Stars"/></a><a> </a>
-  <a href="https://github.com/skrepr/ansible-role-hostname/releases"><img src="https://img.shields.io/github/forks/skrepr/ansible-role-hostname.svg" alt="Forks"/></a><a> </a>
+  <a href="https://github.com/skrepr/ansible-role-promtail/releases"><img src="https://img.shields.io/github/release/skrepr/ansible-role-promtail.svg" alt="Releases"/></a><a> </a>
+  <a href="https://github.com/skrepr/ansible-role-promtail/blob/main/LICENSE"><img src="https://img.shields.io/github/license/skrepr/ansible-role-promtail" alt="LICENSE"/></a><a> </a>
+  <a href="https://github.com/skrepr/ansible-role-promtail/actions/workflows/ci.yml"><img src="https://github.com/skrepr/ansible-role-promtail/actions/workflows/ci.yml/badge.svg" alt="CI"/></a><a> </a>
+  <a href="https://github.com/skrepr/ansible-role-promtail/issues"><img src="https://img.shields.io/github/issues/skrepr/ansible-role-promtail.svg" alt="Issues"/></a><a> </a>
+  <a href="https://github.com/skrepr/ansible-role-promtail/pulls"><img src="https://img.shields.io/github/issues-pr/skrepr/ansible-role-promtail.svg" alt="PR"/></a><a> </a>
+  <a href="https://github.com/skrepr/ansible-role-promtail/commits"><img src="https://img.shields.io/github/commit-activity/m/skrepr/ansible-role-promtail" alt="Commits"/></a><a> </a>
+  <a href="https://github.com/skrepr/ansible-role-promtail/stars"><img src="https://img.shields.io/github/stars/skrepr/ansible-role-promtail.svg" alt="Stars"/></a><a> </a>
+  <a href="https://github.com/skrepr/ansible-role-promtail/releases"><img src="https://img.shields.io/github/forks/skrepr/ansible-role-promtail.svg" alt="Forks"/></a><a> </a>
 </div>
 
 # About
@@ -21,9 +21,9 @@ This Ansible role is used for getting logs from your host to Loki with Promtail.
 
 It also has the ability to add custom Nginx config to extract detailed logs from Nginx with Promtail.
 
-[![Ansible Role](https://img.shields.io/ansible/role/56457)](https://galaxy.ansible.com/skrepr/hostname)
-[![Ansible Role](https://img.shields.io/ansible/role/d/56457)](https://galaxy.ansible.com/skrepr/hostname)
-[![Ansible Quality Score](https://img.shields.io/ansible/quality/56457)](https://galaxy.ansible.com/skrepr/hostname)
+[![Ansible Role](https://img.shields.io/ansible/role/57981)](https://galaxy.ansible.com/skrepr/promtail)
+[![Ansible Role](https://img.shields.io/ansible/role/d/57981)](https://galaxy.ansible.com/skrepr/promtail)
+[![Ansible Quality Score](https://img.shields.io/ansible/quality/57981)](https://galaxy.ansible.com/skrepr/promtail)
 
 ## Requirements
 

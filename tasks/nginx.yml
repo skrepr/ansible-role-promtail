@@ -1,3 +1,6 @@
+---
+
+
 - name: Copy NGINX custom configuration file for JSON format into place.
   template:
     src: templates/etc/nginx/json_format.conf.j2

@@ -12,7 +12,7 @@
 - name: Copy Promtail custom configuration for tailing logs.
   template:
     src: templates/etc/promtail/config.yml.j2
-    dest: /etc/promtail/config.yml"
+    dest: /etc/promtail/config.yml
     owner: root
     group: root
     mode: 0644
